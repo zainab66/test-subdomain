@@ -17,7 +17,7 @@ const users = [
 function App() {
   const [subdomain, setSubDomain] = useState(null);
   useEffect(() => {
-    const host = 'john.subdomain-test.onrender.com/'; // gets the full domain of the app
+    const host = window.location.host; // gets the full domain of the app
     console.log(
       'host',
       host
