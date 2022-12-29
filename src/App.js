@@ -17,8 +17,13 @@ const users = [
 function App() {
   const [subdomain, setSubDomain] = useState(null);
   useEffect(() => {
-    const host = window.location.host; // gets the full domain of the app
-
+    const host = 'john.subdomain-test.onrender.com/'; // gets the full domain of the app
+    console.log(
+      'host',
+      host
+        .split('.')
+        .slice(0, host.includes('subdomain-test.onrender.com') ? -1 : -2)
+    );
     const arr = host
       .split('.')
       .slice(0, host.includes('subdomain-test.onrender.com') ? -1 : -2);
@@ -27,7 +32,7 @@ function App() {
   const requestedUser = users.find((user) => user.username === subdomain);
   return (
     <div className="app">
-      rrr {subdomain}
+      ss {subdomain} ww{window.location.host}
       {subdomain ? (
         requestedUser ? (
           <div>
