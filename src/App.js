@@ -18,7 +18,8 @@ const users = [
 ];
 
 function App() {
-  if (window.location.host.split('.')[0] === 'projects') {
+  console.log(window.location.host.split('.')[0]);
+  if (window.location.host.split('.')[0] === 'projects-2eru') {
     // It checks if the subdomain is named projects.
     return (
       <Router>
